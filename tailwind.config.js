@@ -15,7 +15,8 @@ module.exports = {
   			'background-position-spin': 'background-position-spin 3000ms infinite alternate',
   			meteor: 'meteor 5s linear infinite',
   			marquee: 'marquee var(--duration) infinite linear',
-  			'marquee-vertical': 'marquee-vertical var(--duration) linear infinite'
+  			'marquee-vertical': 'marquee-vertical var(--duration) linear infinite',
+  			'shiny-text': 'shiny-text 8s infinite'
   		},
   		keyframes: {
   			'border-beam': {
@@ -59,9 +60,17 @@ module.exports = {
   				to: {
   					transform: 'translateY(calc(-100% - var(--gap)))'
   				}
+  			},
+  			'shiny-text': {
+  				'0%, 90%, 100%': {
+  					'background-position': 'calc(-100% - var(--shiny-width)) 0'
+  				},
+  				'30%, 60%': {
+  					'background-position': 'calc(100% + var(--shiny-width)) 0'
+  				}
   			}
   		}
   	}
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"), require('daisyui')],
 }

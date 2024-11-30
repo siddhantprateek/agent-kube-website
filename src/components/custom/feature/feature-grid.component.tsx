@@ -24,7 +24,7 @@ const SimpleNotificationList = ({ className }: ComponentProps) => {
       {notifications.map((notification) => (
         <div
           key={notification.id}
-          className="flex items-center justify-between rounded-lg border border-gray-200 bg-white p-3 shadow-sm dark:border-gray-800 dark:bg-gray-900"
+          className="flex items-center justify-between rounded-lg border border-gray-200 bg-transparent border-2 border-gray-600/20 p-3 shadow-sm dark:border-gray-800 dark:bg-gray-900"
         >
           <span className="text-sm font-medium">{notification.title}</span>
           <span className="text-xs text-gray-500">{notification.time}</span>
@@ -45,7 +45,7 @@ const SimpleIntegrationGrid = ({ className }: ComponentProps) => {
       {integrations.map((integration) => (
         <div
           key={integration}
-          className="flex items-center justify-center rounded-lg border border-gray-200 bg-white p-4 text-sm font-medium dark:border-gray-800 dark:bg-gray-900"
+          className="flex items-center justify-center rounded-lg border border-gray-200 bg-gray-100 p-4 text-sm font-medium dark:border-gray-800 dark:bg-gray-900"
         >
           {integration}
         </div>
@@ -80,8 +80,8 @@ const files = [
 const features = [
   {
     Icon: FileTextIcon,
-    name: "Save your files",
-    description: "We automatically save your files as you type.",
+    name: "Monitor",
+    description: "We monitor your cluster like stalkers.",
     href: "#",
     cta: "Learn more",
     className: "col-span-3 lg:col-span-1",
@@ -137,7 +137,7 @@ const features = [
   },
   {
     Icon: CalendarIcon,
-    name: "Calendar",
+    name: "Investigate",
     description: "Use the calendar to filter your files by date.",
     className: "col-span-3 lg:col-span-1",
     href: "#",
