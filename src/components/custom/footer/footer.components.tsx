@@ -35,10 +35,10 @@ const Footer = () => {
             <div>
               <h3 className="font-semibold mb-4 text-gray-900">Company</h3>
               <ul className="space-y-3">
-                <li><a href="#" className="text-gray-600 hover:text-gray-900 text-sm">About</a></li>
-                <li><a href="#" className="text-gray-600 hover:text-gray-900 text-sm">Blog</a></li>
-                <li><a href="#" className="text-gray-600 hover:text-gray-900 text-sm">Careers</a></li>
-                <li><a href="#" className="text-gray-600 hover:text-gray-900 text-sm">Contact</a></li>
+                <li><a href="/about" className="text-gray-600 hover:text-gray-900 text-sm">About</a></li>
+                <li><a href="/blog" className="text-gray-600 hover:text-gray-900 text-sm">Blog</a></li>
+                <li><a href="/career" className="text-gray-600 hover:text-gray-900 text-sm">Careers</a></li>
+                <li><a href="/contact" className="text-gray-600 hover:text-gray-900 text-sm">Contact</a></li>
               </ul>
             </div>
 
@@ -46,10 +46,10 @@ const Footer = () => {
             <div>
               <h3 className="font-semibold mb-4 text-gray-900">Resources</h3>
               <ul className="space-y-3">
-                <li><a href="#" className="text-gray-600 hover:text-gray-900 text-sm">Documentation</a></li>
-                <li><a href="#" className="text-gray-600 hover:text-gray-900 text-sm">Support</a></li>
-                <li><a href="#" className="text-gray-600 hover:text-gray-900 text-sm">Terms of Service</a></li>
-                <li><a href="#" className="text-gray-600 hover:text-gray-900 text-sm">Privacy Policy</a></li>
+                <li><a href="https://docs.agentkube.com" target="_blank" className="text-gray-600 hover:text-gray-900 text-sm">Documentation</a></li>
+                <li><a href="/support" className="text-gray-600 hover:text-gray-900 text-sm">Support</a></li>
+                <li><a href="/terms-of-service" className="text-gray-600 hover:text-gray-900 text-sm">Terms of Service</a></li>
+                <li><a href="/privacy-policy" className="text-gray-600 hover:text-gray-900 text-sm">Privacy Policy</a></li>
               </ul>
             </div>
           </div>
