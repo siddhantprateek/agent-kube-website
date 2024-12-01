@@ -1,4 +1,4 @@
-import { Landing } from './pages';
+import { Landing, Pricing } from './pages';
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -24,6 +24,7 @@ function App() {
       {/* Routes */}
       <Routes>
         <Route path='/' element={<Landing />} />
+        <Route path='/pricing' element={<Pricing />} />
       </Routes>
 
       {/* Footer */}

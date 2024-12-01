@@ -17,11 +17,10 @@ const Header = () => {
     <>
       {/* Navigation */}
       <nav className="flex items-center justify-between pt-6 px-[3rem]">
-        <div className="flex items-center space-x-4">
+        <a href="/" className="flex items-center space-x-4">
           <img src={LOGO} className="h-[3rem] -mr-5" alt="" />
-
           <span className="text-xl font-bold">AgentKube</span>
-        </div>
+        </a>
 
         <div className="hidden md:flex items-center space-x-8">
           <button
