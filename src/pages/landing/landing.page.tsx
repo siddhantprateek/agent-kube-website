@@ -1,4 +1,4 @@
-import { FeatureGrid, Footer, Header, Hero } from "@/components/custom";
+import { FeatureGrid, Hero, FAQs } from "@/components/custom";
 import { motion } from 'framer-motion';
 import DASHBOARD from '@/assets/dashboard.png';
 
@@ -18,24 +18,18 @@ const staggerContainer = {
 
 const LandingPage = () => {
   return (
-    <motion.div 
-      className="min-h-screen bg-gray-200"
+    <motion.div
+      className="min-h-screen"
       initial="initial"
       animate="animate"
       variants={staggerContainer}
     >
-      {/* Header */}
-      <motion.div 
-        className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
-        variants={fadeInUp}
-      >
-        <Header />
-      </motion.div>
+
 
       {/* Main Container */}
       <Hero />
 
-      <motion.div 
+      <motion.div
         className="mx-auto max-w-7xl px-4 mb-10 sm:px-6 lg:px-8"
         variants={fadeInUp}
       >
@@ -47,21 +41,21 @@ const LandingPage = () => {
           animate={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <motion.div 
+          <motion.div
             className="mockup-browser-toolbar text-gray-600"
             whileHover={{ backgroundColor: "rgba(0,0,0,0.05)" }}
           >
             app.agentkube.com
           </motion.div>
-          <motion.div 
+          <motion.div
             className="bg-gray-200 flex justify-center py-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
           >
-            <motion.img 
-              src={DASHBOARD} 
-              alt="Dashboard" 
+            <motion.img
+              src={DASHBOARD}
+              alt="Dashboard"
               className="max-w-full h-auto"
               whileHover={{ scale: 1.01 }}
               transition={{ type: "spring", stiffness: 400 }}
@@ -70,18 +64,26 @@ const LandingPage = () => {
         </motion.div>
       </motion.div>
 
-      <motion.div 
+      <motion.div
         className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
         variants={fadeInUp}
+        id="features-section"
       >
+        <div className="my-10">
+          <h1 className="text-5xl">Features</h1>
+          <p className="text-xl text-gray-600">Seamlessly orchestrate and monitor clusters from a single dashboard.</p>
+        </div>
         <FeatureGrid />
       </motion.div>
 
-      <motion.footer
+
+      <motion.div
+        className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
         variants={fadeInUp}
       >
-        <Footer />
-      </motion.footer>
+        <FAQs />
+      </motion.div>
+
     </motion.div>
   );
 };

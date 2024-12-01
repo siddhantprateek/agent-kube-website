@@ -1,0 +1,1 @@
+export { default as CHATUI } from './chat.png';

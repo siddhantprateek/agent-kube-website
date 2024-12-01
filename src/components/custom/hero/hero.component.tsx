@@ -63,7 +63,8 @@ const Hero = () => {
             className="text-6xl font-bold mb-4"
             variants={itemVariants}
           >
-            Kubernetes Intelligence
+            <span className="text-blue-600/80 mr-2">Kubernetes</span>
+            Intelligence
             <br />
             <motion.span
               className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300/80 bg-clip-text text-center font-semibold leading-none text-transparent dark:from-white dark:to-slate-900/10"

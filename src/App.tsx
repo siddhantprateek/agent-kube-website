@@ -1,13 +1,36 @@
 import { Landing } from './pages';
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { Header, Footer } from '@/components/custom';
+
+const fadeInUp = {
+  initial: { opacity: 0, y: 20 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.6 }
+};
+
+
 
 function App() {
 
   return (
-    <Routes>
-      <Route path='/' element={<Landing />} />
-    </Routes>
+    <div className='bg-gray-200'>
+      {/* Header */}
+      <motion.div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" variants={fadeInUp}>
+        <Header />
+      </motion.div>
+
+      {/* Routes */}
+      <Routes>
+        <Route path='/' element={<Landing />} />
+      </Routes>
+
+      {/* Footer */}
+      <motion.footer variants={fadeInUp}>
+        <Footer />
+      </motion.footer>
+    </div>
   )
 }
 

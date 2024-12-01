@@ -1,9 +1,9 @@
 import { CalendarIcon, FileTextIcon } from "@radix-ui/react-icons";
 import { BellIcon, Share2Icon } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { Calendar } from "@/components/ui/calendar";
 import { BentoCard, BentoGrid } from "@/components/ui/bento-grid";
 import Marquee from "@/components/ui/marquee";
+import { CHATUI } from "@/assets";
 
 interface ComponentProps {
   className?: string;
@@ -37,7 +37,7 @@ const SimpleNotificationList = ({ className }: ComponentProps) => {
 // Simple integration grid to replace AnimatedBeamMultipleOutputDemo
 const SimpleIntegrationGrid = ({ className }: ComponentProps) => {
   const integrations = [
-    "Slack", "GitHub", "Dropbox", "Google", "Zoom", "Discord"
+    "Slack", "GitHub", "PagerDuty", "Discord"
   ];
 
   return (
@@ -45,11 +45,19 @@ const SimpleIntegrationGrid = ({ className }: ComponentProps) => {
       {integrations.map((integration) => (
         <div
           key={integration}
-          className="flex items-center justify-center rounded-lg border border-gray-200 bg-gray-100 p-4 text-sm font-medium dark:border-gray-800 dark:bg-gray-900"
+          className="flex items-center justify-center rounded-lg border-2 border-gray-500/40 bg-gray-200 p-4 text-sm font-medium dark:border-gray-800 dark:bg-gray-900"
         >
           {integration}
         </div>
       ))}
+    </div>
+  );
+};
+
+const TalkToClusterGrid = ({ className }: ComponentProps) => {
+  return (
+    <div className={cn("p-4", className)}>
+      <img src={CHATUI} className="" alt="" />
     </div>
   );
 };
@@ -137,17 +145,13 @@ const features = [
   },
   {
     Icon: CalendarIcon,
-    name: "Investigate",
-    description: "Use the calendar to filter your files by date.",
+    name: "Talk to Cluster",
+    description: "Interact with cluster effortlessly.",
     className: "col-span-3 lg:col-span-1",
     href: "#",
     cta: "Learn more",
     background: (
-      <Calendar
-        mode="single"
-        selected={new Date(2022, 4, 11, 0, 0, 0)}
-        className="absolute right-0 top-10 origin-top rounded-md border transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_40%,#000_100%)] group-hover:scale-105"
-      />
+      <TalkToClusterGrid className="absolute right-2 top-4 h-[400px] border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-105" />
     ),
   },
 ];
