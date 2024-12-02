@@ -1,38 +1,14 @@
 import { CalendarIcon, FileTextIcon } from "@radix-ui/react-icons";
-import { BellIcon, Share2Icon } from "lucide-react";
+import { Share2Icon, ChartSpline } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { BentoCard, BentoGrid } from "@/components/ui/bento-grid";
 import Marquee from "@/components/ui/marquee";
-import { CHATUI } from "@/assets";
+import { CHATUI, MONITOR } from "@/assets";
 
 interface ComponentProps {
   className?: string;
 }
 
-// Simple notification list component to replace AnimatedListDemo
-const SimpleNotificationList = ({ className }: ComponentProps) => {
-  const notifications = [
-    { id: 1, title: "New message", time: "Just now" },
-    { id: 2, title: "File uploaded", time: "2m ago" },
-    { id: 3, title: "Project updated", time: "5m ago" },
-    { id: 4, title: "Task completed", time: "10m ago" },
-    { id: 5, title: "New comment", time: "15m ago" }
-  ];
-
-  return (
-    <div className={cn("flex flex-col gap-2 p-4", className)}>
-      {notifications.map((notification) => (
-        <div
-          key={notification.id}
-          className="flex items-center justify-between rounded-lg border border-gray-200 bg-transparent border-2 border-gray-600/20 p-3 shadow-sm dark:border-gray-800 dark:bg-gray-900"
-        >
-          <span className="text-sm font-medium">{notification.title}</span>
-          <span className="text-xs text-gray-500">{notification.time}</span>
-        </div>
-      ))}
-    </div>
-  );
-};
 
 // Simple integration grid to replace AnimatedBeamMultipleOutputDemo
 const SimpleIntegrationGrid = ({ className }: ComponentProps) => {
@@ -58,6 +34,14 @@ const TalkToClusterGrid = ({ className }: ComponentProps) => {
   return (
     <div className={cn("p-4", className)}>
       <img src={CHATUI} className="" alt="" />
+    </div>
+  );
+};
+
+const MonitoringClusterGrid = ({ className }: ComponentProps) => {
+  return (
+    <div className={cn("p-4", className)}>
+      <img src={MONITOR} className="" alt="" />
     </div>
   );
 };
@@ -88,8 +72,8 @@ const files = [
 const features = [
   {
     Icon: FileTextIcon,
-    name: "Monitor",
-    description: "We monitor your cluster like stalkers.",
+    name: "Audits",
+    description: "Audit and share incident reports to shareholders/customers.",
     href: "#",
     cta: "Learn more",
     className: "col-span-3 lg:col-span-1",
@@ -122,14 +106,14 @@ const features = [
     ),
   },
   {
-    Icon: BellIcon,
-    name: "Notifications",
-    description: "Get notified when something happens.",
+    Icon: ChartSpline,
+    name: "Monitoring",
+    description: "Get real-time monitoring insights.",
     href: "#",
     cta: "Learn more",
     className: "col-span-3 lg:col-span-2",
     background: (
-      <SimpleNotificationList className="absolute right-2 top-4 h-[300px] w-full border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-105" />
+      <MonitoringClusterGrid className="absolute right-2 top-4 h-[400px] border-none transition-all duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-105" />
     ),
   },
   {
