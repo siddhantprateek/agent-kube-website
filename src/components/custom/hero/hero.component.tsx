@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import AnimatedShinyText from "@/components/ui/animated-shiny-text";
 import { motion } from 'framer-motion';
@@ -95,12 +94,12 @@ const Hero = () => {
               whileTap={{ scale: 0.95 }}
               transition={{ type: "spring", stiffness: 400, damping: 17 }}
             >
-              <Button
-                size="lg"
-                className="px-8 py-6 text-lg"
+              <a
+                href="/"
+                className="bg-black text-white px-8 py-3 text-lg rounded-lg"
               >
-                Get free demo
-              </Button>
+                Join Waitlist
+              </a>
             </motion.div>
           </motion.div>
         </motion.div>
