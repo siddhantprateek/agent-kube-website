@@ -135,7 +135,7 @@ const WaitlistPage = () => {
               >
                 <AvatarCircles numPeople={99} avatarUrls={avatars} />
                 <span className="text-sm text-gray-600">
-                  103+ makers have already joined
+                  10+ devs have already joined
                 </span>
               </motion.div>
             </div>
