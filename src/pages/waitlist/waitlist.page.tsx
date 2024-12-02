@@ -1,6 +1,7 @@
 import { WAITING } from "@/assets";
 import AvatarCircles from "@/components/ui/avatar-circles";
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet";
 
 const WaitlistPage = () => {
   const avatars = [
@@ -67,7 +68,7 @@ const WaitlistPage = () => {
       variants={containerVariants}
       className="mt-20 p-4"
     >
-      <div className="max-w-6xl mx-auto bg-gray-50 rounded-3xl shadow-lg overflow-hidden">
+      <div className="max-w-6xl mx-auto bg-white rounded-3xl shadow-lg overflow-hidden">
         <div className="flex flex-col md:flex-row">
           {/* Left Content */}
           {/* Logo */}
@@ -75,6 +76,14 @@ const WaitlistPage = () => {
                 <img src={LOGO} className="h-[3rem] -mr-5" alt="" />
                 <span className="text-xl font-bold">AgentKube</span>
               </div> */}
+
+          <Helmet>
+            <script
+              src="https://getlaunchlist.com/js/widget.js"
+              type="text/javascript"
+              defer
+            />
+          </Helmet>
 
 
           <motion.div
@@ -109,11 +118,12 @@ const WaitlistPage = () => {
               {/* Form */}
               <motion.div
                 variants={itemVariants}
-                className="flex flex-col sm:flex-row gap-3 mb-8"
+                className="flex flex-col justify-center mb-4 rounded-xl"
               >
+                {/* WAITLIST DIV */}
                 <div className="launchlist-widget" data-key-id="5BFOY9" data-height="180px"></div>
 
-                <motion.input
+                {/* <motion.input
                   whileFocus={{ scale: 1.02 }}
                   type="email"
                   placeholder="name@domain.com"
@@ -125,7 +135,7 @@ const WaitlistPage = () => {
                   className="px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors"
                 >
                   Join now
-                </motion.button>
+                </motion.button> */}
               </motion.div>
 
               {/* Social Proof */}
