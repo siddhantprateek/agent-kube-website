@@ -133,7 +133,7 @@ const WaitlistPage = () => {
                 variants={itemVariants}
                 className="flex items-center gap-3"
               >
-                <AvatarCircles numPeople={99} avatarUrls={avatars} />
+                <AvatarCircles numPeople={10} avatarUrls={avatars} />
                 <span className="text-sm text-gray-600">
                   10+ devs have already joined
                 </span>
