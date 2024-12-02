@@ -95,7 +95,7 @@ const Hero = () => {
               transition={{ type: "spring", stiffness: 400, damping: 17 }}
             >
               <a
-                href="/"
+                href="/waitlist"
                 className="bg-black text-white px-8 py-3 text-lg rounded-lg"
               >
                 Join Waitlist
