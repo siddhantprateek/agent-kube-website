@@ -35,7 +35,7 @@ const Header = () => {
         </div>
 
         <div className="flex items-center space-x-4">
-          <Button variant="ghost">Sign in</Button>
+          <a href="https://account.agentkube.com">Sign in</a>
           <Button>Get demo</Button>
         </div>
       </nav>
