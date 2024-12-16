@@ -75,5 +75,5 @@ module.exports = {
   		}
   	}
   },
-  plugins: [tailwindAnimate],
+  plugins: [tailwindAnimate, daisyui],
 }
