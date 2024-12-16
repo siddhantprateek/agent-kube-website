@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Badge } from "@/components/ui/badge";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
-import { Auditlogs, HALFDASH, Investigate, KUBEICON } from '@/assets';
+import { Auditlogs, Investigate, KUBEICON } from '@/assets';
 
 // Enhanced animation variants
 const fadeInUp = {
@@ -256,11 +256,11 @@ const SolutionPage = () => {
               className='flex justify-center relative mt-[3rem]'
               variants={heroImageVariant}
             >
-              <img 
+              {/* <img 
                 src={HALFDASH} 
                 className="w-[50vw] border-l border-r border-t border-gray-500 rounded-t-2xl" 
                 alt="" 
-              />
+              /> */}
             </motion.div>
           </motion.div>
         </motion.div>
