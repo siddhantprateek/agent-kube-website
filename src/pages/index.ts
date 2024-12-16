@@ -3,3 +3,5 @@ export { default as Pricing } from './pricing/pricing.pages';
 export { default as Waitlist } from './waitlist/waitlist.page';
 export { default as Solution } from './solutions/solutions.pages';
 export { default as Partner } from './partner/partner.pages';
+export { default as PrivacyPolicy } from './company/privacy-policy.pages';
+export { default as TermsOfServices } from './company/terms-of-services.pages';

@@ -1,8 +1,9 @@
-import { Landing, Partner, Pricing, Solution, Waitlist } from '@/pages';
+import { Landing, Partner, Pricing, PrivacyPolicy, Solution, Waitlist } from '@/pages';
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Header, Footer } from '@/components/custom';
+import TermsAndConditions from './pages/company/terms-of-services.pages';
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -28,6 +29,8 @@ function App() {
         <Route path='/waitlist' element={<Waitlist />} />
         <Route path='/solutions' element={<Solution />} />
         <Route path='/partner' element={<Partner />} />
+        <Route path='/privacy-policy' element={<PrivacyPolicy />} />
+        <Route path='/terms-of-service' element={<TermsAndConditions />} />
       </Routes>
 
       {/* Footer */}
