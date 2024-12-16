@@ -29,7 +29,7 @@ const Header = () => {
           >
             Features
           </button>
-          <a href="#" className="text-gray-600 hover:text-gray-900">Solutions</a>
+          <a href="/solutions" className="text-gray-600 hover:text-gray-900">Solutions</a>
           <a href="#" className="text-gray-600 hover:text-gray-900">Resources</a>
           <a href="#" className="text-gray-600 hover:text-gray-900">Pricing</a>
         </div>

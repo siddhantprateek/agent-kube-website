@@ -34,7 +34,7 @@ const LandingPage = () => {
         variants={fadeInUp}
       >
         <motion.div
-          className="mockup-browser border-2 border-gray-400/40 bg-gray-100 my-8 border hover:shadow-2xl hover:shadow-gray-600/10 overflow-hidden"
+          className="mockup-browser border-gray-400/40 bg-gray-100 my-8 border hover:shadow-2xl hover:shadow-gray-600/10 overflow-hidden"
           whileHover={{ scale: 1.02 }}
           transition={{ type: "spring", stiffness: 300 }}
           initial={{ opacity: 0, y: 40 }}

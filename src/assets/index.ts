@@ -1,3 +1,8 @@
 export { default as CHATUI } from './chat.png';
 export { default as MONITOR } from './monitor.png';
 export { default as WAITING } from './waiting.avif';
+export { default as HALFDASH } from './half-dashboard.png';
+export { default as ConnectedCluster } from './connect-cluster.png';
+export { default as Investigate } from './investigate.png';
+export { default as Auditlogs } from './auditlogs.png';
+export { default as KUBEICON } from './kubernetes.svg';
