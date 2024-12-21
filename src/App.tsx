@@ -1,4 +1,4 @@
-import { Landing, Partner, Pricing, PrivacyPolicy, Solution, Waitlist } from '@/pages';
+import { Blogs, Landing, Partner, Pricing, PrivacyPolicy, Solution, Waitlist } from '@/pages';
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -31,6 +31,7 @@ function App() {
         <Route path='/partner' element={<Partner />} />
         <Route path='/privacy-policy' element={<PrivacyPolicy />} />
         <Route path='/terms-of-service' element={<TermsAndConditions />} />
+        <Route path='/blogs' element={<Blogs />} />
       </Routes>
 
       {/* Footer */}

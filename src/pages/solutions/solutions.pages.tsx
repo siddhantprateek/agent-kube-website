@@ -2,7 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Badge } from "@/components/ui/badge";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
-import { Auditlogs, Investigate, KUBEICON } from '@/assets';
+import { Auditlogs, KUBEICON } from '@/assets';
+import { AnimatedInvestigation } from '@/components/custom';
 
 // Enhanced animation variants
 const fadeInUp = {
@@ -21,8 +22,8 @@ const staggerContainer = {
 
 const cardVariants = {
   initial: { opacity: 0, y: 20 },
-  animate: { 
-    opacity: 1, 
+  animate: {
+    opacity: 1,
     y: 0,
     transition: {
       duration: 0.5,
@@ -40,8 +41,8 @@ const cardVariants = {
 
 const heroImageVariant = {
   initial: { opacity: 0, scale: 0.8 },
-  animate: { 
-    opacity: 1, 
+  animate: {
+    opacity: 1,
     scale: 1,
     transition: {
       duration: 1,
@@ -86,8 +87,8 @@ const ClusterCard: React.FC<ClusterCardProps> = ({ cluster, index }) => (
     initial={{ opacity: 0, x: -50 }}
     whileInView={{ opacity: 1, x: 0 }}
     whileHover={{ scale: 1.05 }}
-    transition={{ 
-      duration: 0.5, 
+    transition={{
+      duration: 0.5,
       delay: index * 0.2,
       type: "spring",
       stiffness: 300
@@ -96,7 +97,7 @@ const ClusterCard: React.FC<ClusterCardProps> = ({ cluster, index }) => (
     className="bg-[#fdfdf9a1] p-4 rounded-lg max-w-xl"
   >
     <div className="flex items-center space-x-4">
-      <motion.div 
+      <motion.div
         className="bg-sky-200 p-2 rounded-lg"
         whileHover={{ rotate: 360 }}
         transition={{ duration: 1 }}
@@ -163,15 +164,7 @@ const SolutionPage = () => {
         "Root cause determination"
       ],
       component: (
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-          className='brightness-105 grayscale'
-        >
-          <img src={Investigate} alt='' className='rounded-xl h-[20rem]' />
-        </motion.div>
+          <AnimatedInvestigation />
       )
     },
     {
@@ -184,7 +177,7 @@ const SolutionPage = () => {
         "Action verification"
       ],
       component: (
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
@@ -212,7 +205,7 @@ const SolutionPage = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8 }}
         >
-          <motion.div 
+          <motion.div
             className="text-center my-20"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -231,7 +224,7 @@ const SolutionPage = () => {
               </Badge>
             </motion.div>
 
-            <motion.h1 
+            <motion.h1
               className="text-5xl font-bold mb-6"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -242,7 +235,7 @@ const SolutionPage = () => {
               <span className="text-emerald-500">Kubernetes Environments</span>
             </motion.h1>
 
-            <motion.p 
+            <motion.p
               className="text-xl text-gray-600 max-w-3xl mx-auto"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -252,7 +245,7 @@ const SolutionPage = () => {
               automated investigation, and intelligent problem resolution.
             </motion.p>
 
-            <motion.div 
+            <motion.div
               className='flex justify-center relative mt-[3rem]'
               variants={heroImageVariant}
             >
@@ -271,7 +264,7 @@ const SolutionPage = () => {
         className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16"
         variants={fadeInUp}
       >
-        <motion.h2 
+        <motion.h2
           className="text-5xl font-semibold mb-12 text-gray-600"
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -282,9 +275,9 @@ const SolutionPage = () => {
         </motion.h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 h-[25rem]">
           {features.map((feature, index) => (
-            <SolutionFeatureCard 
-              key={index} 
-              {...feature} 
+            <SolutionFeatureCard
+              key={index}
+              {...feature}
               delay={index * 0.2}
             />
           ))}
@@ -296,7 +289,7 @@ const SolutionPage = () => {
         className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4"
         variants={fadeInUp}
       >
-        <motion.h2 
+        <motion.h2
           className="text-5xl font-semibold mb-12 text-right"
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -337,7 +330,7 @@ const SolutionPage = () => {
         viewport={{ once: true }}
       >
         <div className="text-center bg-gray-800 p-20 w-full text-white rounded-3xl">
-          <motion.h2 
+          <motion.h2
             className="text-3xl font-semibold mb-6"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -346,7 +339,7 @@ const SolutionPage = () => {
           >
             Ready to Transform Your Kubernetes Operations?
           </motion.h2>
-          <motion.p 
+          <motion.p
             className="text-xl mb-8"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -362,7 +355,7 @@ const SolutionPage = () => {
           >
             <a
               href="/waitlist"
-              className="inline-block bg-white text-black px-8 py-3 text-lg font-bold rounded-lg hover:bg-gray-100 transition-colors duration-300"
+              className="inline-block bg-white text-black px-8 py-3 text-lg rounded-lg hover:bg-gray-100 transition-colors duration-300"
             >
               Join Waitlist
             </a>
