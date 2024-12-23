@@ -27,15 +27,15 @@ const Hero = () => {
   };
 
   return (
-    <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
+    <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4 sm:py-8">
       <motion.div
-        className="relative bg-gradient-to-t from-gray-100/80 to-gray-200 rounded-3xl py-24 px-8 shadow-sm border border-gray-100 min-h-[85vh]"
+        className="relative bg-gradient-to-t from-gray-100/80 to-gray-200 rounded-3xl py-12 sm:py-24 px-4 sm:px-8 shadow-sm border border-gray-100 min-h-[70vh] sm:min-h-[85vh]"
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5 }}
       >
         <motion.div
-          className="text-center mt-20 mb-12"
+          className="text-center mt-8 sm:mt-20 mb-8 sm:mb-12"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
@@ -43,11 +43,11 @@ const Hero = () => {
           <motion.div variants={itemVariants}>
             <Badge
               variant="secondary"
-              className="bg-gray-500/10 text-base my-4 text-stone-500 hover:text-stone-700 hover:cursor-pointer rounded-full px-4 py-1"
+              className="bg-gray-500/10 text-sm sm:text-base my-2 sm:my-4 text-stone-500 hover:text-stone-700 hover:cursor-pointer rounded-full px-2 sm:px-4 py-1"
             >
-              <AnimatedShinyText className="inline-flex items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
+              <AnimatedShinyText className="inline-flex items-center justify-center px-2 sm:px-4 py-1 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
                 <motion.span
-                  className="mr-2"
+                  className="mr-1 sm:mr-2 text-sm sm:text-base"
                   animate={{ rotate: [0, 14, -8, 0] }}
                   transition={{ duration: 1.5, repeat: Infinity, repeatDelay: 2 }}
                 >
@@ -59,7 +59,7 @@ const Hero = () => {
           </motion.div>
 
           <motion.h1
-            className="text-6xl font-bold mb-4"
+            className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4"
             variants={itemVariants}
           >
             <span className="text-blue-600/80 mr-2">Kubernetes</span>
@@ -82,7 +82,7 @@ const Hero = () => {
           </motion.h1>
 
           <motion.p
-            className="text-xl text-gray-600 mb-8"
+            className="text-lg sm:text-xl text-gray-600 mb-6 sm:mb-8 px-4"
             variants={itemVariants}
           >
             Turn complexity into clarity with AI-powered analysis.
@@ -96,7 +96,7 @@ const Hero = () => {
             >
               <a
                 href="/waitlist"
-                className="bg-black text-white px-8 py-3 text-lg rounded-lg"
+                className="inline-block bg-black text-white px-6 sm:px-8 py-2 sm:py-3 text-base sm:text-lg rounded-lg hover:bg-gray-800 transition-colors"
               >
                 Join Waitlist
               </a>

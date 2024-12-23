@@ -39,18 +39,12 @@ const cardVariants = {
   }
 };
 
-const heroImageVariant = {
-  initial: { opacity: 0, scale: 0.8 },
-  animate: {
-    opacity: 1,
-    scale: 1,
-    transition: {
-      duration: 1,
-      ease: "easeOut",
-      delay: 0.5
-    }
-  }
-};
+
+interface SolutionFtProps {
+  title: string;
+  description: string;
+  delay?: number;
+}
 
 interface SolutionFtProps {
   title: string;
@@ -66,12 +60,12 @@ const SolutionFeatureCard: React.FC<SolutionFtProps> = ({ title, description, de
     whileHover="hover"
     viewport={{ once: true }}
     transition={{ delay }}
-    className="flex flex-col"
+    className="flex flex-col h-full"
   >
-    <Card className="h-full p-5 border-2 shadow-none bg-gradient-to-b from-gray-400/50 to-gray-200 hover:shadow-2xl hover:shadow-gray-400/40 transition-all duration-300">
+    <Card className="h-full p-4 sm:p-5 border-2 shadow-none bg-gradient-to-b from-gray-400/50 to-gray-200 hover:shadow-2xl hover:shadow-gray-400/40 transition-all duration-300">
       <CardHeader className='text-gray-600 hover:text-gray-900 transition-colors duration-300'>
-        <CardTitle className="text-3xl font-semibold">{title}</CardTitle>
-        <CardDescription className="text-md text-gray-600">{description}</CardDescription>
+        <CardTitle className="text-xl sm:text-2xl lg:text-3xl font-semibold">{title}</CardTitle>
+        <CardDescription className="text-sm sm:text-md text-gray-600">{description}</CardDescription>
       </CardHeader>
     </Card>
   </motion.div>
@@ -94,23 +88,24 @@ const ClusterCard: React.FC<ClusterCardProps> = ({ cluster, index }) => (
       stiffness: 300
     }}
     viewport={{ once: true }}
-    className="bg-[#fdfdf9a1] p-4 rounded-lg max-w-xl"
+    className="bg-[#fdfdf9a1] p-3 sm:p-4 rounded-lg max-w-xl"
   >
-    <div className="flex items-center space-x-4">
+    <div className="flex items-center space-x-3 sm:space-x-4">
       <motion.div
         className="bg-sky-200 p-2 rounded-lg"
         whileHover={{ rotate: 360 }}
         transition={{ duration: 1 }}
       >
-        <img src={KUBEICON} className='h-7 w-7' alt='kubernetes-icon' />
+        <img src={KUBEICON} className='h-6 w-6 sm:h-7 sm:w-7' alt='kubernetes-icon' />
       </motion.div>
       <div className="flex-1">
         <h2 className="text-sm font-semibold text-gray-800">kubernetes_cluster {cluster}</h2>
-        <p className="text-sm text-gray-600">Last active: 16/12/2024, 11:32:57</p>
+        <p className="text-xs sm:text-sm text-gray-600">Last active: 16/12/2024, 11:32:57</p>
       </div>
     </div>
   </motion.div>
 );
+
 
 const SolutionPage = () => {
   const features = [
@@ -200,13 +195,13 @@ const SolutionPage = () => {
       {/* Hero Section */}
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
-          className="relative bg-gradient-to-t from-gray-300 to-gray-200 rounded-3xl py-16 px-8 border-b border-green-800 h-[70vh]"
+          className="relative bg-gradient-to-t from-gray-300 to-gray-200 rounded-3xl py-8 sm:py-16 px-4 sm:px-8 border-b border-green-800 min-h-[50vh] sm:min-h-[70vh]"
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8 }}
         >
           <motion.div
-            className="text-center my-20"
+            className="text-center my-8 sm:my-20"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.8 }}
@@ -218,14 +213,14 @@ const SolutionPage = () => {
             >
               <Badge
                 variant="secondary"
-                className="bg-blue-500/10 text-base my-4 text-gray-500 hover:text-blue-700 rounded-full px-4 py-1"
+                className="bg-blue-500/10 text-sm sm:text-base my-2 sm:my-4 text-gray-500 hover:text-blue-700 rounded-full px-3 sm:px-4 py-1"
               >
                 Kubernetes Intelligence Platform
               </Badge>
             </motion.div>
 
             <motion.h1
-              className="text-5xl font-bold mb-6"
+              className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7, duration: 0.8 }}
@@ -236,7 +231,7 @@ const SolutionPage = () => {
             </motion.h1>
 
             <motion.p
-              className="text-xl text-gray-600 max-w-3xl mx-auto"
+              className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto px-4"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.9, duration: 0.8 }}
@@ -244,28 +239,17 @@ const SolutionPage = () => {
               Transform your Kubernetes operations with AI-powered incident response,
               automated investigation, and intelligent problem resolution.
             </motion.p>
-
-            <motion.div
-              className='flex justify-center relative mt-[3rem]'
-              variants={heroImageVariant}
-            >
-              {/* <img 
-                src={HALFDASH} 
-                className="w-[50vw] border-l border-r border-t border-gray-500 rounded-t-2xl" 
-                alt="" 
-              /> */}
-            </motion.div>
           </motion.div>
         </motion.div>
       </div>
 
       {/* Core Features Grid */}
       <motion.div
-        className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16"
+        className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 sm:py-16"
         variants={fadeInUp}
       >
         <motion.h2
-          className="text-5xl font-semibold mb-12 text-gray-600"
+          className="text-3xl sm:text-4xl lg:text-5xl font-semibold mb-8 sm:mb-12 text-gray-600"
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
@@ -273,7 +257,7 @@ const SolutionPage = () => {
         >
           Core Capabilities
         </motion.h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 h-[25rem]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-2">
           {features.map((feature, index) => (
             <SolutionFeatureCard
               key={index}
@@ -286,11 +270,11 @@ const SolutionPage = () => {
 
       {/* Technical Features */}
       <motion.div
-        className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4"
+        className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 sm:py-16"
         variants={fadeInUp}
       >
         <motion.h2
-          className="text-5xl font-semibold mb-12 text-right"
+          className="text-3xl sm:text-4xl lg:text-5xl font-semibold mb-8 sm:mb-12 text-right"
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
@@ -298,7 +282,7 @@ const SolutionPage = () => {
         >
           Technical Features
         </motion.h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-4">
           {technicalFeatures.map((section, index) => (
             <motion.div
               key={index}
@@ -306,11 +290,12 @@ const SolutionPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.2 }}
               viewport={{ once: true }}
+              className="h-full"
             >
-              <Card className="border-2 border-gray-200 bg-slate-300/60 p-6 rounded-3xl shadow-none">
-                <CardHeader className='h-[15rem]'>
-                  <CardTitle className="text-3xl mb-4">{section.title}</CardTitle>
-                  <CardDescription className='text-lg'>{section.description}</CardDescription>
+              <Card className="h-full border-2 border-gray-200 bg-slate-300/60 p-4 sm:p-6 rounded-3xl shadow-none">
+                <CardHeader className="space-y-2 sm:space-y-4">
+                  <CardTitle className="text-2xl sm:text-3xl">{section.title}</CardTitle>
+                  <CardDescription className="text-base sm:text-lg">{section.description}</CardDescription>
                 </CardHeader>
                 <CardContent>
                   {section.component}
@@ -323,15 +308,15 @@ const SolutionPage = () => {
 
       {/* CTA Section */}
       <motion.div
-        className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-2"
+        className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 sm:py-16"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
-        <div className="text-center bg-gray-800 p-20 w-full text-white rounded-3xl">
+        <div className="text-center bg-gray-800 p-6 sm:p-20 w-full text-white rounded-3xl">
           <motion.h2
-            className="text-3xl font-semibold mb-6"
+            className="text-2xl sm:text-3xl font-semibold mb-4 sm:mb-6"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -340,7 +325,7 @@ const SolutionPage = () => {
             Ready to Transform Your Kubernetes Operations?
           </motion.h2>
           <motion.p
-            className="text-xl mb-8"
+            className="text-lg sm:text-xl mb-6 sm:mb-8"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
@@ -355,7 +340,7 @@ const SolutionPage = () => {
           >
             <a
               href="/waitlist"
-              className="inline-block bg-white text-black px-8 py-3 text-lg rounded-lg hover:bg-gray-100 transition-colors duration-300"
+              className="inline-block bg-white text-black px-6 sm:px-8 py-2 sm:py-3 text-base sm:text-lg rounded-lg hover:bg-gray-100 transition-colors duration-300"
             >
               Join Waitlist
             </a>
