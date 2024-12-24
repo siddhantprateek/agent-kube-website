@@ -22,4 +22,26 @@
   :root {
     --radius: 0.5rem;
   }
+
+  /* Scrollbar Styles */
+  ::-webkit-scrollbar {
+    width: 8px;
+    background-color: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: rgb(156 163 175 / 0.3);
+    border-radius: 6px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(156 163 175 / 0.5);
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(156 163 175 / 0.3) transparent;
+  }
 }

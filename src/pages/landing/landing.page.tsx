@@ -23,6 +23,7 @@ const LandingPage = () => {
       initial="initial"
       animate="animate"
       variants={staggerContainer}
+      
     >
 
 

@@ -17,22 +17,22 @@ const FAQItem: React.FC<FAQItemProps> = ({ question, answer, isOpen, onClick }) 
   return (
     <div className="border-b border-gray-200">
       <button
-        className="w-full py-6 text-left flex justify-between items-center focus:outline-none"
+        className="w-full py-4 md:py-6 text-left flex justify-between items-center focus:outline-none group"
         onClick={onClick}
       >
-        <span className="text-lg font-medium text-gray-900">{question}</span>
+        <span className="text-base md:text-lg font-medium text-gray-900 group-hover:text-gray-600">{question}</span>
         <ChevronDown
-          className={`w-5 h-5 text-gray-500 transition-transform duration-200 ${
+          className={`w-4 h-4 md:w-5 md:h-5 text-gray-500 transition-transform duration-200 group-hover:text-gray-600 ${
             isOpen ? 'transform rotate-180' : ''
           }`}
         />
       </button>
       <div
-        className={`overflow-hidden text-xl transition-all duration-200 ${
-          isOpen ? 'max-h-48 pb-6' : 'max-h-0'
+        className={`overflow-hidden transition-all duration-200 ${
+          isOpen ? 'max-h-96 pb-4 md:pb-6' : 'max-h-0'
         }`}
       >
-        <p className="text-gray-600">{answer}</p>
+        <p className="text-sm md:text-base text-gray-600">{answer}</p>
       </div>
     </div>
   );
@@ -69,12 +69,14 @@ const FAQ: React.FC = () => {
   };
 
   return (
-    <div className="w-full mx-auto px-4 py-12 sm:px-6 lg:px-8">
-      <p className='font-bold text-gray-600 text-center mt-10 mb-5'>FAQs</p>
-      <h1 className="text-4xl font-bold text-center mb-12">
+    <div className="w-full mx-auto px-4 py-8 md:py-12 sm:px-6 lg:px-8">
+      <p className="font-bold text-gray-600 text-center mt-6 md:mt-10 mb-3 md:mb-5 text-sm md:text-base">
+        FAQs
+      </p>
+      <h1 className="text-2xl md:text-4xl font-bold text-center mb-8 md:mb-12">
         Frequently Asked Questions
       </h1>
-      <div className="space-y-1 px-20">
+      <div className="max-w-3xl mx-auto space-y-1 px-0 sm:px-8 md:px-12 lg:px-16">
         {faqData.map((item, index) => (
           <FAQItem
             key={index}
