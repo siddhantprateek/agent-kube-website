@@ -4,3 +4,4 @@ export { default as Footer } from './footer/footer.components';
 export { default as FeatureGrid } from './feature/feature-grid.component';
 export { default as FAQs } from './faqs/faqs.component';
 export { default as AnimatedInvestigation } from './preview/investigation.component';
+export { default as ActivityLog } from './preview/audit.component';

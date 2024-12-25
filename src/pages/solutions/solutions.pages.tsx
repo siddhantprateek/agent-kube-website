@@ -2,8 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Badge } from "@/components/ui/badge";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
-import { Auditlogs, KUBEICON } from '@/assets';
-import { AnimatedInvestigation } from '@/components/custom';
+import { KUBEICON } from '@/assets';
+import { ActivityLog, AnimatedInvestigation } from '@/components/custom';
 
 // Enhanced animation variants
 const fadeInUp = {
@@ -177,9 +177,8 @@ const SolutionPage = () => {
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className='brightness-105 grayscale'
         >
-          <img src={Auditlogs} alt='' className='rounded-2xl h-[20rem]' />
+          <ActivityLog />
         </motion.div>
       )
     }
