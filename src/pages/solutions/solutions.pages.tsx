@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { KUBEICON } from '@/assets';
 import { ActivityLog, AnimatedInvestigation } from '@/components/custom';
+import { BlurText } from '@/components/ui/blur-text';
 
 // Enhanced animation variants
 const fadeInUp = {
@@ -64,7 +65,11 @@ const SolutionFeatureCard: React.FC<SolutionFtProps> = ({ title, description, de
   >
     <Card className="h-full p-4 sm:p-5 border-2 shadow-none bg-gradient-to-b from-gray-400/50 to-gray-200 hover:shadow-2xl hover:shadow-gray-400/40 transition-all duration-300">
       <CardHeader className='text-gray-600 hover:text-gray-900 transition-colors duration-300'>
-        <CardTitle className="text-xl sm:text-2xl lg:text-3xl font-semibold">{title}</CardTitle>
+        <CardTitle className="text-xl sm:text-2xl lg:text-3xl font-semibold">
+          <BlurText
+            text={title}
+          />
+        </CardTitle>
         <CardDescription className="text-sm sm:text-md text-gray-600">{description}</CardDescription>
       </CardHeader>
     </Card>
@@ -159,7 +164,7 @@ const SolutionPage = () => {
         "Root cause determination"
       ],
       component: (
-          <AnimatedInvestigation />
+        <AnimatedInvestigation />
       )
     },
     {
@@ -224,9 +229,14 @@ const SolutionPage = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7, duration: 0.8 }}
             >
+
               Automated SRE Intelligence for
               <br />
-              <span className="text-emerald-500">Kubernetes Environments</span>
+              <span className="text-emerald-500">
+                <BlurText
+                  text='Kubernetes Environments'
+                />
+              </span>
             </motion.h1>
 
             <motion.p

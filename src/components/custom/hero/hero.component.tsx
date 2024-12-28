@@ -34,6 +34,7 @@ const Hero = () => {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5 }}
       >
+  
         <motion.div
           className="text-center mt-8 sm:mt-20 mb-8 sm:mb-12"
           variants={containerVariants}

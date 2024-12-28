@@ -1,6 +1,7 @@
 import { FeatureGrid, Hero, FAQs } from "@/components/custom";
 import { motion } from 'framer-motion';
 import DASHBOARD from '@/assets/dashboard.png';
+import { BlurText } from "@/components/ui/blur-text";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -23,7 +24,7 @@ const LandingPage = () => {
       initial="initial"
       animate="animate"
       variants={staggerContainer}
-      
+
     >
 
 
@@ -46,7 +47,7 @@ const LandingPage = () => {
             className="mockup-browser-toolbar text-gray-600"
             whileHover={{ backgroundColor: "rgba(0,0,0,0.05)" }}
           >
-            app.agentkube.com
+            dashboard.agentkube.com
           </motion.div>
           <motion.div
             className="bg-gray-200 flex justify-center py-4"
@@ -72,7 +73,11 @@ const LandingPage = () => {
       >
         <div className="my-10">
           <h1 className="text-5xl">Features</h1>
-          <p className="text-xl text-gray-600">Seamlessly orchestrate and monitor clusters from a single dashboard.</p>
+          <p className="text-xl text-gray-600">
+            <BlurText
+              text="Seamlessly orchestrate and monitor clusters from a single dashboard."
+            />
+          </p>
         </div>
         <FeatureGrid />
       </motion.div>
