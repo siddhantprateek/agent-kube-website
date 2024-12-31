@@ -98,7 +98,7 @@ const Header = () => {
       <nav className="flex items-center justify-between px-4 sm:px-6 lg:px-12 pt-4 sm:pt-6">
         <a href="/" className="flex items-center space-x-2 sm:space-x-4">
           <img src={LOGO} className="h-8 sm:h-12 -mr-3 sm:-mr-5" alt="Logo" />
-          <span className="text-lg sm:text-xl font-bold">Logo</span>
+          <span className="text-lg sm:text-xl font-bold">Agentkube</span>
         </a>
 
         <div className="hidden md:flex items-center space-x-6 lg:space-x-8">

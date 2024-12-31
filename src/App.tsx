@@ -1,4 +1,4 @@
-import { Blogs, BlogViewer, Landing, Partner, Pricing, PrivacyPolicy, Solution, Waitlist } from '@/pages';
+import { About, Blogs, BlogViewer, Landing, Partner, Pricing, PrivacyPolicy, Solution, Waitlist } from '@/pages';
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -29,6 +29,7 @@ function App() {
         <Route path='/waitlist' element={<Waitlist />} />
         <Route path='/solutions' element={<Solution />} />
         <Route path='/partner' element={<Partner />} />
+        <Route path='/about' element={<About />} />
         <Route path='/privacy-policy' element={<PrivacyPolicy />} />
         <Route path='/terms-of-service' element={<TermsAndConditions />} />
         <Route path='/blogs' element={<Blogs />} />

@@ -6,3 +6,4 @@ export { default as ConnectedCluster } from './connect-cluster.png';
 export { default as Investigate } from './investigate.png';
 export { default as Auditlogs } from './auditlogs.png';
 export { default as KUBEICON } from './kubernetes.svg';
+export { default as AGENTKUBEHQ } from './agentkube-hq.png';
