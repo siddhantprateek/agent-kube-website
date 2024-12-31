@@ -8,3 +8,4 @@ export { default as TermsOfServices } from './company/terms-of-services.pages';
 export { default as Blogs } from './blogs/blogs.pages';
 export { default as BlogViewer } from './blogs/view/blog-view.pages';
 export { default as About } from './about/about.pages';
+export { default as Contact } from './contact/contact.pages';
