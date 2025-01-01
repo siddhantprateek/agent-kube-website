@@ -160,7 +160,7 @@ const Header = () => {
 
         <div className="hidden md:flex items-center space-x-4">
           <a 
-            href="/signin" 
+            href="https://account.agentkube.com" 
             className="text-gray-600 hover:text-gray-900 transition-colors"
           >
             Sign in
