@@ -1,6 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import AnimatedShinyText from "@/components/ui/animated-shiny-text";
 import { motion } from 'framer-motion';
+import { BlurText } from "@/components/ui/blur-text";
 
 const Hero = () => {
   const containerVariants = {
@@ -29,14 +30,16 @@ const Hero = () => {
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4 sm:py-8">
       <motion.div
-        className="relative bg-gradient-to-t from-gray-100/80 to-gray-200 rounded-3xl py-12 sm:py-24 px-4 sm:px-8 shadow-sm border border-gray-100 min-h-[70vh] sm:min-h-[85vh]"
+        className="relative dark:bg-black bg-gray-50 dark:bg-grid-white/[0.2] bg-grid-gray-500/[0.2] rounded-3xl py-20 sm:py-24 px-4 sm:px-8 shadow-none min-h-[70vh] sm:min-h-[85vh] overflow-hidden"
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5 }}
       >
-  
+        {/* Radial gradient overlay */}
+        <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-gray-200 [mask-image:radial-gradient(ellipse_at_center,transparent_1%,black)]"></div>
+
         <motion.div
-          className="text-center mt-8 sm:mt-20 mb-8 sm:mb-12"
+          className="text-center mt-8 sm:mt-20 mb-8 sm:mb-12 relative z-10"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
@@ -66,20 +69,11 @@ const Hero = () => {
             <span className="text-blue-600/80 mr-2">Kubernetes</span>
             Intelligence
             <br />
-            <motion.span
-              className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300/80 bg-clip-text text-center font-semibold leading-none text-transparent dark:from-white dark:to-slate-900/10"
-              animate={{
-                backgroundPosition: ['0% 0%', '100% 100%'],
-                opacity: [1, 0.8, 1]
-              }}
-              transition={{
-                duration: 3,
-                repeat: Infinity,
-                repeatType: "reverse"
-              }}
-            >
-              Always on Guard
-            </motion.span>
+
+            <BlurText
+              text="Always on Guard"
+              className="pointer-events-none whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300/80 bg-clip-text text-center font-semibold leading-none  dark:from-white dark:to-slate-900/10"
+            />
           </motion.h1>
 
           <motion.p

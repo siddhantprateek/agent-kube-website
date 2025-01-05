@@ -1,4 +1,4 @@
-import { FeatureGrid, Hero, FAQs } from "@/components/custom";
+import { FeatureGrid, Hero, FAQs, ActionDemo } from "@/components/custom";
 import { motion } from 'framer-motion';
 import DASHBOARD from '@/assets/dashboard.png';
 import { BlurText } from "@/components/ui/blur-text";
@@ -66,22 +66,28 @@ const LandingPage = () => {
         </motion.div>
       </motion.div>
 
-      <motion.div
-        className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
-        variants={fadeInUp}
-        id="features-section"
-      >
-        <div className="my-10">
-          <h1 className="text-5xl">Features</h1>
-          <p className="text-xl text-gray-600">
-            <BlurText
-              text="Seamlessly orchestrate and monitor clusters from a single dashboard."
-            />
-          </p>
-        </div>
-        <FeatureGrid />
-      </motion.div>
+      <div className="w-full bg-gray-900 py-20">
+        <motion.div
+          className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
+          variants={fadeInUp}
+          id="features-section"
+        >
+          <div className="my-10">
+            <span className="text-emerald-500 ">Key Features</span>
+            <h1 className="text-5xl text-white mt-1">Features</h1>
+            <p className="text-xl text-gray-400">
+              <BlurText
+                text="Seamlessly orchestrate and monitor clusters from a single dashboard."
+              />
+            </p>
+          </div>
+          <FeatureGrid />
+        </motion.div>
+      </div>
 
+      <ActionDemo />
+
+      {/* <Partner /> */}
 
       <motion.div
         className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"

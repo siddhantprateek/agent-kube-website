@@ -9,7 +9,6 @@ interface ComponentProps {
   className?: string;
 }
 
-
 // Simple integration grid to replace AnimatedBeamMultipleOutputDemo
 const SimpleIntegrationGrid = ({ className }: ComponentProps) => {
   const integrations = [
@@ -21,7 +20,7 @@ const SimpleIntegrationGrid = ({ className }: ComponentProps) => {
       {integrations.map((integration) => (
         <div
           key={integration}
-          className="flex items-center justify-center rounded-lg border-2 border-gray-500/40 bg-gray-200 p-4 text-sm font-medium dark:border-gray-800 dark:bg-gray-900"
+          className="flex items-center justify-center rounded-lg border-2 border-gray-400/20 bg-gray-800/50 p-4 text-sm font-medium text-gray-200 hover:bg-gray-700/50 transition-colors"
         >
           {integration}
         </div>
@@ -33,7 +32,7 @@ const SimpleIntegrationGrid = ({ className }: ComponentProps) => {
 const TalkToClusterGrid = ({ className }: ComponentProps) => {
   return (
     <div className={cn("p-4", className)}>
-      <img src={CHATUI} className="" alt="" />
+      <img src={CHATUI} className="opacity-50 ml-20 mt-20 hover:opacity-100 rounded-xl transition-opacity" alt="" />
     </div>
   );
 };
@@ -41,30 +40,30 @@ const TalkToClusterGrid = ({ className }: ComponentProps) => {
 const MonitoringClusterGrid = ({ className }: ComponentProps) => {
   return (
     <div className={cn("p-4", className)}>
-      <img src={MONITOR} className="" alt="" />
+      <img src={MONITOR} className="opacity-50 ml-80 mt-20 rounded-2xl hover:opacity-100 transition-opacity" alt="" />
     </div>
   );
 };
 
 const files = [
   {
-    name: "bitcoin.pdf",
+    name: "Cluster Investigated",
     body: "Bitcoin is a cryptocurrency invented in 2008 by an unknown person or group of people using the name Satoshi Nakamoto.",
   },
   {
-    name: "finances.xlsx",
+    name: "Created API Key",
     body: "A spreadsheet or worksheet is a file made of rows and columns that help sort data, arrange data easily, and calculate numerical data.",
   },
   {
-    name: "logo.svg",
+    name: "Edited Production deployment",
     body: "Scalable Vector Graphics is an Extensible Markup Language-based vector image format for two-dimensional graphics with support for interactivity and animation.",
   },
   {
-    name: "keys.gpg",
+    name: "Secrets keys.gpg changed",
     body: "GPG keys are used to encrypt and decrypt email, files, directories, and whole disk partitions and to authenticate messages.",
   },
   {
-    name: "seed.txt",
+    name: "Config seed.txt changed",
     body: "A seed phrase, seed recovery phrase or backup seed phrase is a list of words which store all the information needed to recover Bitcoin funds on-chain.",
   },
 ];
@@ -87,19 +86,18 @@ const features = [
             key={idx}
             className={cn(
               "relative w-32 cursor-pointer overflow-hidden rounded-xl border p-4",
-              "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
-              "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]",
-              "transform-gpu blur-[1px] transition-all duration-300 ease-out hover:blur-none",
+              "border-gray-400/20 bg-gray-800/40 hover:bg-gray-700/50",
+              "transform-gpu blur-[1px] transition-all duration-300 ease-out hover:blur-none"
             )}
           >
             <div className="flex flex-row items-center gap-2">
               <div className="flex flex-col">
-                <figcaption className="text-sm font-medium dark:text-white">
+                <figcaption className="text-sm font-medium text-gray-200">
                   {f.name}
                 </figcaption>
               </div>
             </div>
-            <blockquote className="mt-2 text-xs">{f.body}</blockquote>
+            <blockquote className="mt-2 text-xs text-gray-400">{f.body}</blockquote>
           </figure>
         ))}
       </Marquee>
@@ -142,9 +140,14 @@ const features = [
 
 const FeatureGrid = () => {
   return (
-    <BentoGrid>
+    <BentoGrid className="text-gray-200">
       {features.map((feature, idx) => (
-        <BentoCard key={idx} {...feature} />
+        <BentoCard 
+
+          key={idx} 
+          {...feature}
+          className={cn(feature.className, "border-gray-400/20 bg-gray-800/40 hover:bg-gray-700/50")}
+        />
       ))}
     </BentoGrid>
   );

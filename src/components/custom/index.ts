@@ -5,3 +5,5 @@ export { default as FeatureGrid } from './feature/feature-grid.component';
 export { default as FAQs } from './faqs/faqs.component';
 export { default as AnimatedInvestigation } from './preview/investigation.component';
 export { default as ActivityLog } from './preview/audit.component';
+export { default as ActionDemo } from './action-demo/action-demo.component';
+export { default as Partner } from './partner/partner.component';
