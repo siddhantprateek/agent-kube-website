@@ -7,3 +7,7 @@ export { default as Investigate } from './investigate.png';
 export { default as Auditlogs } from './auditlogs.png';
 export { default as KUBEICON } from './kubernetes.svg';
 export { default as AGENTKUBEHQ } from './agentkube-hq.png';
+export { default as EDITOR } from './editor.png';
+export { default as INVESTIGATION } from './investigation.png';
+export { default as MONITORING } from './monitoring.png';
+export { default as PROTOCOL } from './protocol.png';

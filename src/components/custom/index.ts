@@ -7,3 +7,4 @@ export { default as AnimatedInvestigation } from './preview/investigation.compon
 export { default as ActivityLog } from './preview/audit.component';
 export { default as ActionDemo } from './action-demo/action-demo.component';
 export { default as Partner } from './partner/partner.component';
+export { default as ToolFeature } from './toolfeature/toolfeature.component';

@@ -1,4 +1,4 @@
-import { FeatureGrid, Hero, FAQs, ActionDemo } from "@/components/custom";
+import { FeatureGrid, Hero, FAQs, ActionDemo, ToolFeature } from "@/components/custom";
 import { motion } from 'framer-motion';
 import DASHBOARD from '@/assets/dashboard2.png';
 import { BlurText } from "@/components/ui/blur-text";
@@ -86,6 +86,8 @@ const LandingPage = () => {
       </div>
 
       <ActionDemo />
+
+      <ToolFeature />
 
       {/* <Partner /> */}
 
