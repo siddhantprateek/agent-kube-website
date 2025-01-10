@@ -74,7 +74,7 @@ const WaitlistPage = () => {
           {/* Logo */}
           {/* <div className="flex items-center gap-2 mb-12">
                 <img src={LOGO} className="h-[3rem] -mr-5" alt="" />
-                <span className="text-xl font-bold">AgentKube</span>
+                <span className="text-xl font-bold">Agentkube</span>
               </div> */}
 
           <Helmet>

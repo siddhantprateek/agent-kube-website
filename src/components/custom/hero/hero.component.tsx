@@ -44,7 +44,7 @@ const Hero = () => {
           initial="hidden"
           animate="visible"
         >
-          <motion.div variants={itemVariants}>
+          <motion.a variants={itemVariants} href="https://docs.agentkube.com/quickstart" target="_blank">
             <Badge
               variant="secondary"
               className="bg-gray-500/10 text-sm sm:text-base my-2 sm:my-4 text-stone-500 hover:text-stone-700 hover:cursor-pointer rounded-full px-2 sm:px-4 py-1"
@@ -57,10 +57,10 @@ const Hero = () => {
                 >
                   ✨
                 </motion.span>
-                Try Agent Kube Operator →
+                Try Agentkube Operator →
               </AnimatedShinyText>
             </Badge>
-          </motion.div>
+          </motion.a>
 
           <motion.h1
             className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4"

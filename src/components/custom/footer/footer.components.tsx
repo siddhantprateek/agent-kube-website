@@ -13,7 +13,7 @@ const Footer = () => {
             <div className="space-y-4">
               <div className="flex items-center space-x-2">
                 <img src={LOGO} className="h-[3rem] -mr-5" alt="" />
-                <span className="text-xl font-bold">AgentKube</span>
+                <span className="text-xl font-bold">Agentkube</span>
               </div>
               <p className="text-gray-600 text-sm">
                 AI Agent for Kubernetes Cluster.
@@ -57,7 +57,7 @@ const Footer = () => {
           {/* Bottom Footer */}
           <div className="pt-8 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-gray-600 text-sm">
-              © 2024 AgentKube. All rights reserved.
+              © 2024 Agentkube. All rights reserved.
             </p>
             <div className="flex space-x-6">
               <a href="#" className="text-gray-600 hover:text-gray-900">
