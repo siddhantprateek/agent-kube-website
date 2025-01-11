@@ -25,6 +25,7 @@
     "framer-motion": "^11.12.0",
     "lucide-react": "^0.462.0",
     "mini-svg-data-uri": "^1.4.4",
+    "motion": "^11.17.0",
     "prism-react-renderer": "^2.4.1",
     "qss": "^3.0.0",
     "react": "^18.3.1",

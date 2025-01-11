@@ -8,3 +8,4 @@ export { default as ActivityLog } from './preview/audit.component';
 export { default as ActionDemo } from './action-demo/action-demo.component';
 export { default as Partner } from './partner/partner.component';
 export { default as ToolFeature } from './toolfeature/toolfeature.component';
+export { default as VidPreview } from './vidpreview/vidpreview.component';

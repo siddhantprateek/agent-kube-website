@@ -11,3 +11,4 @@ export { default as EDITOR } from './editor.png';
 export { default as INVESTIGATION } from './investigation.png';
 export { default as MONITORING } from './monitoring.png';
 export { default as PROTOCOL } from './protocol.png';
+export { default as THUMBNAIL } from './thumbnail.png';

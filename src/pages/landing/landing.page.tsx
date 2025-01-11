@@ -1,4 +1,4 @@
-import { FeatureGrid, Hero, FAQs, ActionDemo, ToolFeature } from "@/components/custom";
+import { FeatureGrid, Hero, FAQs, ActionDemo, ToolFeature, VidPreview } from "@/components/custom";
 import { motion } from 'framer-motion';
 import DASHBOARD from '@/assets/dashboard2.png';
 import { BlurText } from "@/components/ui/blur-text";
@@ -86,6 +86,15 @@ const LandingPage = () => {
       </div>
 
       <ActionDemo />
+
+      <motion.div
+        className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
+        variants={fadeInUp}
+      >
+
+        <VidPreview />
+      </motion.div>
+
 
       <ToolFeature />
 
