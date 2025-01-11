@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Menu, X, Users, ChevronDown, BookOpen, Calendar, BarChart, Map, Newspaper, Briefcase, Mail, MessageCircle } from 'lucide-react';
+import { Menu, X, Users, Book, ChevronDown, BookOpen, Calendar, BarChart, Map, Newspaper, Briefcase, Mail, MessageCircle } from 'lucide-react';
 import React from 'react';
 
 const lucideIcons = {
@@ -11,7 +11,8 @@ const lucideIcons = {
   Newspaper,
   Briefcase,
   Mail,
-  MessageCircle
+  MessageCircle,
+  Book
 } as const;
 
 import LOGO from "@/assets/logo.png";
@@ -50,11 +51,17 @@ const Header = () => {
   };
 
   const resourceItems: SubItem[] = [
+    // { 
+    //   label: 'Customer Stories',
+    //   description: 'See how Agentkube users cut their Kubernetes bills in half.',
+    //   href: '/stories',
+    //   icon: 'Users'
+    // },
     { 
-      label: 'Customer Stories',
-      description: 'See how Agentkube users cut their Kubernetes bills in half.',
-      href: '/stories',
-      icon: 'Users'
+      label: 'Documention',
+      description: 'Comprehensive guides and setup instructions for using Agentkube.',
+      href: 'https://docs.agentkube.com/',
+      icon: 'Book'
     },
     { 
       label: 'Blogs',
@@ -165,7 +172,9 @@ const Header = () => {
           >
             Sign in
           </a>
-          <Button>Get demo</Button>
+          <a href="https://docs.agentkube.com">
+            <Button>Get demo</Button>
+          </a>
         </div>
 
         <button
