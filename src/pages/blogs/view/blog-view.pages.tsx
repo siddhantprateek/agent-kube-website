@@ -4,6 +4,14 @@ import { sanityClient } from "@/sanity/client";
 import { PortableText } from "@portabletext/react";
 import { Post } from "@/types/blogs";
 import { SanityComponent } from "@/sanity/component";
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
 
 const BlogViewer = () => {
   const [post, setPost] = useState<Post | null>(null);
@@ -68,6 +76,26 @@ const BlogViewer = () => {
 
   return (
     <article className="max-w-5xl mx-auto px-4 py-8">
+      <Breadcrumb className="mb-6">
+        <BreadcrumbList>
+          <BreadcrumbItem>
+            <BreadcrumbLink href="/">
+              Home
+            </BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>
+            <BreadcrumbLink href="/blogs">
+              Blogs
+            </BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>
+            <BreadcrumbPage>{post.title}</BreadcrumbPage>
+          </BreadcrumbItem>
+        </BreadcrumbList>
+      </Breadcrumb>
+
       <header className="mb-8">
         <h1 className="text-4xl font-bold mb-4">{post.title}</h1>
         {post.mainImage && (
@@ -115,8 +143,8 @@ const BlogViewer = () => {
       </header>
 
       <div className="prose max-w-none">
-        <PortableText 
-          value={post.body} 
+        <PortableText
+          value={post.body}
           components={SanityComponent}
         />
       </div>
