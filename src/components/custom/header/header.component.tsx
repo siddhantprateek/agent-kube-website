@@ -172,7 +172,7 @@ const Header = () => {
           >
             Sign in
           </a>
-          <a href="https://docs.agentkube.com">
+          <a href="https://cal.com/siddhantprateek/agentkube-demo-30-min">
             <Button>Get demo</Button>
           </a>
         </div>
@@ -254,7 +254,9 @@ const Header = () => {
               >
                 Sign in
               </a>
-              <Button className="w-full mt-2">Get demo</Button>
+              <a href="https://cal.com/siddhantprateek/agentkube-demo-30-min" target='_blank'>
+                <Button className="w-full mt-2">Get demo</Button>
+              </a>
             </div>
           </div>
         </div>
