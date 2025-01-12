@@ -90,10 +90,10 @@ const Hero = () => {
               transition={{ type: "spring", stiffness: 400, damping: 17 }}
             >
               <a
-                href="/waitlist"
+                href="https://account.agentkube.com"
                 className="inline-block bg-black text-white px-6 sm:px-8 py-2 sm:py-3 text-base sm:text-lg rounded-lg hover:bg-gray-800 transition-colors"
               >
-                Join Waitlist
+                Get Started
               </a>
             </motion.div>
           </motion.div>
