@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { sanityClient } from "@/sanity/client";
 import { Post } from "@/types/blogs";
 import { BlurText } from "@/components/ui/blur-text";
+import { cn } from "@/lib/utils";
+import { InteractiveGridPattern } from "@/components/ui/interactive-grid-pattern";
 
 export default function AllPosts() {
   const [allPostsData, setAllPosts] = useState<Post[]>([]);
@@ -60,35 +62,44 @@ export default function AllPosts() {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       {/* Blog Header */}
-      <div className="mb-10">
-        <h1 className="text-5xl font-bold">
-          <BlurText
-            text="Blogs"
-          />
-        </h1>
-        <p className="p-2">
-          <BlurText
-            text="Keep up to date with the latest insights, news, and content from Agentkube."
-          />
+      <div className="relative mb-10 flex h-[200px] w-full flex-col items-center justify-center overflow-hidden rounded-lg border bg-background">
+        <p className="z-10 whitespace-pre-wrap text-center font-medium tracking-tighter text-black dark:text-white">
+          <h1 className="text-5xl font-bold">
+            <BlurText
+              text="Blogs"
+            />
+          </h1>
+          <p className="p-2 text-xl">
+            <BlurText
+              text="Keep up to date with the latest insights, news, and content from Agentkube."
+            />
+          </p>
         </p>
+        <InteractiveGridPattern
+          className={cn(
+            "[mask-image:radial-gradient(400px_circle_at_center,white,transparent)]",
+            "inset-x-0 inset-y-[-30%] h-[200%] skew-y-12",
+          )}
+        />
       </div>
+
 
       {/* Featured Post */}
       {featuredPost && (
         <a href={`/blogs/${featuredPost.slug.current}`}>
           <div className="group cursor-pointer mb-10">
-            <div className="relative rounded-2xl overflow-hidden flex md:flex-row flex-col gap-6 bg-slate-800">
+            <div className="relative rounded-xl overflow-hidden flex md:flex-row flex-col gap-6 border border-gray-300">
               <div className="md:w-1/2 relative">
                 {featuredPost.mainImage?.asset?.url && (
                   <img
                     src={featuredPost.mainImage.asset.url}
                     alt={featuredPost.title}
-                    className="w-full h-[400px] object-cover rounded-2xl"
+                    className="w-full h-[400px] object-cover rounded-lg"
                   />
                 )}
               </div>
               <div className="md:w-1/2 p-8 flex flex-col justify-center">
-                <h2 className="text-3xl font-bold mb-4 text-white group-hover:text-green-400 transition-colors">
+                <h2 className="text-4xl font-bold mb-4 group-hover:text-emerald-500 transition-colors">
                   {featuredPost.title}
                 </h2>
                 <div className="flex items-center gap-4 mb-4">
@@ -100,7 +111,7 @@ export default function AllPosts() {
                     />
                   )}
                   <div>
-                    <p className="text-white font-medium">{featuredPost.author.name}</p>
+                    <p className="font-medium">{featuredPost.author.name}</p>
                     <p className="text-sm text-gray-400">
                       {formatDate(featuredPost.publishedAt)}
                     </p>
@@ -131,7 +142,7 @@ export default function AllPosts() {
         {remainingPosts.map((post) => (
           <a href={`/blogs/${post.slug.current}`} key={post._id}>
             <div className="group cursor-pointer">
-              <div className="relative rounded-2xl overflow-hidden mb-4">
+              <div className="relative rounded-lg overflow-hidden mb-4">
                 {post.mainImage?.asset?.url && (
                   <img
                     src={post.mainImage.asset.url}

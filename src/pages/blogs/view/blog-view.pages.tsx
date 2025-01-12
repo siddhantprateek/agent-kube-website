@@ -67,14 +67,14 @@ const BlogViewer = () => {
   }
 
   return (
-    <article className="max-w-4xl mx-auto px-4 py-8">
+    <article className="max-w-5xl mx-auto px-4 py-8">
       <header className="mb-8">
         <h1 className="text-4xl font-bold mb-4">{post.title}</h1>
         {post.mainImage && (
           <img
             src={post.mainImage.asset.url}
             alt={post.title}
-            className="w-full h-64 object-cover rounded-lg mb-4"
+            className="w-full h-84 object-cover rounded-lg mb-4"
           />
         )}
         <div className="flex items-center gap-4 text-gray-600">
