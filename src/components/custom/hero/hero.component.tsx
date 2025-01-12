@@ -3,6 +3,7 @@ import AnimatedShinyText from "@/components/ui/animated-shiny-text";
 import { motion } from 'framer-motion';
 import { BlurText } from "@/components/ui/blur-text";
 
+
 const Hero = () => {
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -84,7 +85,7 @@ const Hero = () => {
           </motion.p>
 
           <motion.div variants={itemVariants}>
-            <motion.div
+            {/* <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               transition={{ type: "spring", stiffness: 400, damping: 17 }}
@@ -95,8 +96,27 @@ const Hero = () => {
               >
                 Get Started
               </a>
-            </motion.div>
+            </motion.div> */}
+
+            <motion.a 
+              href="https://www.producthunt.com/posts/agentkube?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-agentkube" 
+              target="_blank"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="flex items-center justify-center my-5"
+              transition={{ type: "spring", stiffness: 400, damping: 17 }}
+            >
+              <img
+                src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=776573&theme=light&t=1736692483697"
+                alt="Agentkube - AI Agent for Kubernetes Cluster | Product Hunt"
+                style={{ width: '250px', height: '54px' }}
+                width={250}
+                height={54}
+                className="block"
+              />
+            </motion.a>
           </motion.div>
+
         </motion.div>
       </motion.div>
     </div>
