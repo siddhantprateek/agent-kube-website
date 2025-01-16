@@ -1,13 +1,42 @@
 import React, { useState } from "react";
 import { BlockImage, CodeBlock, Table } from "@/types/blogs";
 import { PortableTextComponents } from "@portabletext/react";
-// import SyntaxHighlighter from 'react-syntax-highlighter/dist/esm/default-highlight';
 import { Prism, SyntaxHighlighterProps } from 'react-syntax-highlighter';
-const SyntaxHighlighter = (Prism as any) as React.FC<SyntaxHighlighterProps>;
 import { atomOneLight } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import { CSSProperties } from 'react';
 import { Copy, Check } from 'lucide-react';
 import { LinkPreview } from "@/components/ui/link-preview";
+import slugify from 'slugify';
+
+const SyntaxHighlighter = (Prism as any) as React.FC<SyntaxHighlighterProps>;
+
+// Helper function to generate heading
+const createHeading = (level: string, className: string) => {
+  return ({ children, value }: any) => {
+    // Extract text from the heading for the ID
+    const text = value.children
+      .map((child: any) => child.text)
+      .join('')
+      .toLowerCase();
+    
+    // Create a URL-friendly slug for the ID
+    const slug = slugify(text, {
+      lower: true,
+      strict: true,
+      trim: true
+    });
+
+    // Add scroll-margin-top for smooth scrolling with fixed header
+    const combinedClassName = `${className} scroll-mt-16`;
+
+    return React.createElement(
+      level,
+      { id: slug, className: combinedClassName },
+      children
+    );
+  };
+};
+
 export const SanityComponent: Partial<PortableTextComponents> = {
   types: {
     image: ({ value }) => {
@@ -40,7 +69,7 @@ export const SanityComponent: Partial<PortableTextComponents> = {
         try {
           await navigator.clipboard.writeText(typedValue.code || '');
           setCopied(true);
-          setTimeout(() => setCopied(false), 2000); // Reset after 2 seconds
+          setTimeout(() => setCopied(false), 2000);
         } catch (err) {
           console.error('Failed to copy code:', err);
         }
@@ -116,18 +145,10 @@ export const SanityComponent: Partial<PortableTextComponents> = {
     number: ({ children }) => <li>{children}</li>,
   },
   block: {
-    h1: ({ children }) => (
-      <h1 className="text-3xl font-bold mt-8 mb-4">{children}</h1>
-    ),
-    h2: ({ children }) => (
-      <h2 className="text-2xl font-bold mt-6 mb-3">{children}</h2>
-    ),
-    h3: ({ children }) => (
-      <h3 className="text-xl font-bold mt-5 mb-2">{children}</h3>
-    ),
-    h4: ({ children }) => (
-      <h4 className="text-lg font-bold mt-4 mb-2">{children}</h4>
-    ),
+    h1: createHeading('h1', 'text-3xl font-bold mt-8 mb-4'),
+    h2: createHeading('h2', 'text-2xl font-bold mt-6 mb-3'),
+    h3: createHeading('h3', 'text-xl font-bold mt-5 mb-2'),
+    h4: createHeading('h4', 'text-lg font-bold mt-4 mb-2'),
     normal: ({ children }) => <p className="mb-4">{children}</p>,
     blockquote: ({ children }) => (
       <blockquote className="border-l-4 border-gray-200 pl-4 my-4 italic">
