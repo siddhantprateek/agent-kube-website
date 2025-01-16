@@ -57,7 +57,7 @@ export function SocialShare({ url, title }: SocialShareProps) {
           asChild
         >
           <a href={shareLinks.twitter} target="_blank" rel="noopener noreferrer" title="Share on Twitter">
-            <img className='h-4 w-4' src="https://private-user-images.githubusercontent.com/130232913/341180954-2ecdfcf4-d572-4b6a-8613-8ca5e3455061.svg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MzcwMzg3OTYsIm5iZiI6MTczNzAzODQ5NiwicGF0aCI6Ii8xMzAyMzI5MTMvMzQxMTgwOTU0LTJlY2RmY2Y0LWQ1NzItNGI2YS04NjEzLThjYTVlMzQ1NTA2MS5zdmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwMTE2JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDExNlQxNDQxMzZaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0xYTg5MmVkN2FiM2MyODYwYjkyYTBkYTNkYjkwOTdlNmRhODEzYjMyMDBkZmM3ODUzMmMyZTZkMmNlOWUzYmUxJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.4jwPpCeJuUulmdsdNnnFm5roS-TBCUnF7H6sehj9GTs" alt="" />
+            <img className='h-4 w-4' src={"https://img.icons8.com/ios-glyphs/90/twitterx--v2.png"} alt="" />
           </a>
         </Button>
         <Button
